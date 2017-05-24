@@ -60,13 +60,19 @@ export default {
 .fa { padding-top: 4px; }
 .fa-code-fork { font-size: 30px; }
 .logo { max-width: 400px; }
-.tile {
-  margin: 5px;
+.tile { margin: 5px;
   border-radius: 3px;
   background: unset;
   background-size: cover; }
-.tile a { padding: 1.25rem 2.5rem 1.25rem 1.5rem; width: 100% }
+.tile a { display: block;
+  padding: 1.25rem 2.5rem 1.25rem 1.5rem;
+  width: 100% }
 .tile:hover { box-shadow: 0 0 20px rgba(0,0,0,0.2); cursor: pointer; }
 .tile.sigma { background-image: url("./../assets/SigmaTile.png"); }
 .tile.hastebin { background-image: url("./../assets/HasteTile.png"); }
+@media screen and (max-width: 936px), print {
+  .columns {
+    display: block !important;
+  }
+}
 </style>
