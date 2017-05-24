@@ -18,20 +18,20 @@
 
         <div class="column">
 
-            <h1 class="title has-text-centered"><i class="fa fa-code-fork" aria-hidden="true" style="font-size: 30px;"></i> Our projects</h1>
+            <h1 class="title has-text-centered"><fa icon='fa-code-fork'></fa> Our projects</h1>
 
             <div class="tile sigma">
-              <article class="tile is-child notification">
+              <a href="https://sigma.auroraproject.xyz/">
                 <p class="title">Apex Sigma</p>
                 <p class="subtitle">A bot made to bring knowledge to your discord server.</p>
-              </article>
+              </a>
             </div>
 
             <div class="tile hastebin">
-              <article class="tile is-child notification">
+              <a href="https://haste.auroraproject.xyz/">
                 <p class="title">Hastebin</p>
                 <p class="subtitle">Just a regular hastebin, hosted by us.</p>
-              </article>
+              </a>
             </div>
 
         </div>
@@ -43,12 +43,12 @@
 
 <script>
 export default {
-  name: 'hello',
-  data () {
-    return {
-      msg: 'Welcome'
-    }
-  }
+  name: 'landing'
+  // data () {
+  //   return {
+  //     msg: 'Welcome'
+  //   }
+  // }
 }
 </script>
 
@@ -57,17 +57,22 @@ export default {
 .hero { background: linear-gradient(160deg, #18AE90 0%, #16826C 50%, #145246 75%) }
 .hero, .tile, .title, .subtitle { color: #fff; }
 .hero .columns, .hero .columns .column { margin: auto; }
-
-.splash .fa { padding-top: 4px; }
-
-
-
-
-
+.fa { padding-top: 4px; }
+.fa-code-fork { font-size: 30px; }
 .logo { max-width: 400px; }
-.tile {
-  margin: 5px;
+.tile { margin: 5px;
+  border-radius: 3px;
+  background: unset;
   background-size: cover; }
-.tile.sigma article { background-image: url("./../assets/SigmaTile.png"); }
-.tile.hastebin article { background-image: url("./../assets/HasteTile.png"); }
+.tile a { display: block;
+  padding: 1.25rem 2.5rem 1.25rem 1.5rem;
+  width: 100% }
+.tile:hover { box-shadow: 0 0 20px rgba(0,0,0,0.2); cursor: pointer; }
+.tile.sigma { background-image: url("./../assets/SigmaTile.png"); }
+.tile.hastebin { background-image: url("./../assets/HasteTile.png"); }
+@media screen and (max-width: 936px), print {
+  .columns {
+    display: block !important;
+  }
+}
 </style>
