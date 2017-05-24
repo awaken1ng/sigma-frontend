@@ -11,5 +11,5 @@ export default {
 </script>
 
 <style>
-html { overflow-y: initial; }
+html { overflow-y: initial !important; }
 </style>
