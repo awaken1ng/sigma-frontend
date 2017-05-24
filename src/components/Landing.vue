@@ -70,9 +70,7 @@ export default {
 .tile:hover { box-shadow: 0 0 20px rgba(0,0,0,0.2); cursor: pointer; }
 .tile.sigma { background-image: url("./../assets/SigmaTile.png"); }
 .tile.hastebin { background-image: url("./../assets/HasteTile.png"); }
-@media screen and (max-width: 936px), print {
-  .columns {
-    display: block !important;
-  }
-}
+@media screen and (max-width: 500px), print { .logo {max-width: 300px; } }
+@media screen and (max-width: 400px), print { .logo {max-width: 200px; } }
+@media screen and (max-width: 936px), print { .columns { display: block !important; } }
 </style>
