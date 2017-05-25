@@ -1,4 +1,4 @@
-import 'animate.css'
+import './assets/animate_custom.sass'
 import './assets/semantic_custom.sass'
 import './assets/bulma_custom.sass'
 
