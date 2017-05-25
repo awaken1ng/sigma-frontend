@@ -52,7 +52,8 @@ export default {
   max-width: 700px;
   border-radius: 3px;
   background: unset;
-  background-size: cover; }
+  background-size: cover;
+  transition: box-shadow .15s ease-in-out; }
 .tile a { display: block;
   padding: 1.25rem 2.5rem 1.25rem 1.5rem;
   width: 100% }
