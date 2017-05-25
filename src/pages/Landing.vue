@@ -1,8 +1,7 @@
 <template>
   <section class="hero is-fullheight splash">
     <div class="hero-body">
-      <div class="columns container">
-
+      <div class="columns container animated fadeIn">
         <div class="column">
           <div class="has-text-centered">
             <img class="logo" src="./../assets/logo_ap.png">
@@ -24,7 +23,6 @@
             <tile v-for="project in others" :key=project.id :id=project.id :title=project.title :description=project.description :target=project.target></tile>
         </div>
       </div>
-
     </div>
   </section>
 </template>
@@ -58,7 +56,7 @@ export default {
 .tile a { display: block;
   padding: 1.25rem 2.5rem 1.25rem 1.5rem;
   width: 100% }
-.tile:hover { box-shadow: 0 0 20px rgba(0,0,0,0.2); cursor: pointer; }
+.tile:hover { box-shadow: 0 0 20px rgba(0,0,0,0.75); cursor: pointer; }
 .tile.sigma { background-image: url("./../assets/SigmaTile.png"); }
 .tile.hastebin { background-image: url("./../assets/HasteTile.png"); }
 .tile.bdlinestickers { background-image: url("./../assets/BDLineStickersTile.png"); }
