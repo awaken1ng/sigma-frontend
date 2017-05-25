@@ -17,10 +17,10 @@
         </div>
 
         <div class="column">
-            <h1 class="title has-text-centered"><fa icon='fa-code'></fa> Our projects</h1>
+            <h1 class="title has-text-centered"><fa icon='fa-code' size=30></fa> Our projects</h1>
             <tile v-for="project in projects" :key=project.id :id=project.id :title=project.title :description=project.description :target=project.target></tile>
 
-            <h1 class="title has-text-centered" style="margin-top: 1.5rem;"><fa icon='fa-code-fork'></fa> Other</h1>
+            <h1 class="title has-text-centered" style="margin-top: 1.5rem;"><fa icon='fa-code-fork' size=30></fa> Other</h1>
             <tile v-for="project in others" :key=project.id :id=project.id :title=project.title :description=project.description :target=project.target></tile>
         </div>
       </div>
@@ -30,29 +30,15 @@
 </template>
 
 <script>
+import Tile from '@/components/Tile'
+import Fa from '@/components/FaIcon'
 export default {
   name: 'Landing',
-  components: {
-    'tile': {
-      props: ['id', 'title', 'description', 'target'],
-      template: `
-      <div class="tile" :class="id">
-        <a :href=target style="display: block; color: inherit; padding: 1.25rem 2.5rem 1.25rem 1.5rem;">
-          <p class="title" style="color: inherit;">{{ title }}</p>
-          <p class="subtitle" style="color: inherit;">{{ description }}</p>
-        </a>
-      </div>`
-    }
-  },
+  components: { Tile, Fa },
   data () {
     return {
-      projects: [
-        {id: 'sigma', title: 'Apex Sigma', description: 'A bot made to bring knowledge to your discord server.', target: '/#sigma'},
-        {id: 'bdlinestickers', title: 'BetterDiscord LINE Stickers', description: 'A BetterDiscord plugin to add LINE stickers into emote menu', target: 'https://github.com/awaken1ng/bd-linestickers'}
-      ],
-      others: [
-        {id: 'hastebin', title: 'Hastebin', description: 'Just a regular hastebin, hosted by us.', target: 'https://haste.auroraproject.xyz/'}
-      ]
+      projects: this.$parent.landing.projects,
+      others: this.$parent.landing.others
     }
   }
 }
@@ -63,8 +49,6 @@ export default {
 .hero { background-image: linear-gradient(160deg, #18AE90 0%, #16826C 50%, #145246 75%) }
 .hero, .tile, .title, .subtitle { color: #fff; }
 .hero .columns, .hero .columns .column { margin: auto; }
-.fa { padding-top: 4px; }
-.fa-code, .fa-code-fork { font-size: 30px; }
 .logo { max-width: 400px; }
 .tile { margin: 10px auto;
   max-width: 700px;

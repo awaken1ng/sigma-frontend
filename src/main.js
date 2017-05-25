@@ -7,7 +7,6 @@ import router from './router'
 
 Vue.config.productionTip = false
 /* eslint-disable no-new */
-Vue.component('fa', {props: ['icon'], template: '<i class="fa" :class=icon aria-hidden="true"></i>'})
 new Vue({
   el: '#app',
   router,

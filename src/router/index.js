@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Landing from '@/components/Landing'
-import Sigma from '@/components/Sigma'
+import Landing from '@/pages/Landing'
+import Sigma from '@/pages/Sigma'
 Vue.use(Router)
 
 export default new Router({
