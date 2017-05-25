@@ -14,7 +14,7 @@ export default {
 
 <style>
 html { overflow-y: initial !important; }
-.fa { padding-top: 4px; }
+.fa { vertical-align: baseline; }
 a.button {
   transition: all .15s ease-in-out;
   color: #1B6F5F;
@@ -23,5 +23,11 @@ a.button:hover {
   color: #FFF;
   background-color: #1ABC9C;
   border-color: #1ABC9C; }
-.tag.is-white { color: #1B6F5F; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-thumb {
+  background: #7a7a7a;
+  border-radius: 2px; }
+.ui {
+  font-size: 14px;
+  line-height: 20px; }
 </style>

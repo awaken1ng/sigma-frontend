@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Landing from '@/pages/Landing'
 import Sigma from '@/pages/Sigma'
+import Commands from '@/pages/Commands'
 Vue.use(Router)
 
 export default new Router({
@@ -15,6 +16,11 @@ export default new Router({
       path: '/sigma',
       name: 'Sigma',
       component: Sigma
+    },
+    {
+      path: '/commands',
+      name: 'Sigma - Command list',
+      component: Commands
     }
   ]
 })

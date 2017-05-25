@@ -1,5 +1,5 @@
 <template>
-  <nav class="nav">
+  <nav class="nav animated fadeInDown">
     <div class="nav-left">
       <a class="nav-item" href="/#">
         <img src="./../assets/logo_sigma.png" alt="">
@@ -19,11 +19,7 @@
     <!-- This "nav-menu" is hidden on mobile -->
     <!-- Add the modifier "is-active" to display it on mobile -->
     <div class="nav-right nav-menu">
-      <a class="nav-item" href="https://sigma.auroraproject.xyz/commands">Commands</a>
-      <a class="nav-item" href="https://status.auroraproject.xyz/">Status</a>
-      <a class="nav-item" href="https://sigma.auroraproject.xyz/leaderboard">Leaderboard</a>
-      <a class="nav-item" href="https://github.com/aurora-pro/apex-sigma">Github</a>
-      <a class="nav-item" href="https://discordapp.com/invite/Ze9EfTd">Discord</a>
+      <a v-for="item in navmenu" class="nav-item" :href=item.href>{{ item.text }}</a>
     </div>
   </nav>
 </template>
@@ -31,6 +27,11 @@
 <script>
 export default {
   name: 'Navigation',
+  data () {
+    return {
+      navmenu: this.$parent.$parent.sigma.navmenu
+    }
+  },
   methods: {
     openNavMenu: (event) => {
       event.target.classList.toggle('is-active')
@@ -40,6 +41,5 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 </style>
