@@ -39,6 +39,7 @@ export default {
 </script>
 
 <style scoped>
+.nav { padding: 5px; }
 .hoverline {
   vertical-align: middle;
   transform: translateZ(0);
