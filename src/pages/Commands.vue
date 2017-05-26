@@ -129,8 +129,8 @@ export default {
   margin: 1rem;
   font-size: 1rem; }
 .ui.accordion .content { padding: 0.5em 2.5em 1.5em; }
-.ui.styled.accordion .title { color: rgba(100, 100, 100, 0.4); }
-.ui.styled.accordion .title:hover, .ui.styled.accordion .title.active { color: rgb(100, 100, 100) }
+.ui.styled.accordion .title { color: rgba(100, 100, 100, 0.9); }
+.ui.styled.accordion .title:hover, .ui.styled.accordion .title.active { color: #1B6F5F  }
 .command:not(:last-child) { margin-bottom: 2rem; }
 .command h1 { font-size: 1.5rem; }
 .command h1, .aliases strong { color: #1B6F5F; }
