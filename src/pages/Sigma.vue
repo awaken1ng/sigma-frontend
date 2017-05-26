@@ -27,9 +27,10 @@
     <section class="section has-text-centered stats animated fadeIn">
       <h1 class="title "><fa icon="fa-table" size=30></fa> Stats</h1>
       <div class="container">
+        <loader id="loader" inline="true"></loader>
         <div class="columns">
           <div class="column">
-            <stat v-for="stat in stats" :key=stat.label :label=stat.label :value=stat.value :icon=stat.icon></stat>
+            <stat v-for="stat in stats" class="animated fadeIn" :key=stat.label :label=stat.label :value=stat.value :icon=stat.icon></stat>
           </div>
         </div>
       </div>
@@ -43,6 +44,7 @@ import Navigation from '@/components/Navigation'
 import Card from '@/components/Card'
 import Fa from '@/components/FaIcon'
 import Stat from '@/components/Stat'
+import Loader from '@/components/Loader'
 
 export default {
   name: 'Sigma-main',
@@ -55,20 +57,19 @@ export default {
       stats: []
     }
   },
-  components: { Navigation, Card, Fa, Stat },
+  components: { Navigation, Card, Fa, Stat, Loader },
   mounted () {
     document.title = 'Sigma: The Database'
     let api = this.$root.api
-    $.get(`${api}/version`, (data) => {
-      this.version = data.version
-      this.codename = data.codename
-    })
-    $.get(`${api}/stats`, (data) => {
-      this.stats.push({label: 'Active servers', value: data.ServerCount, icon: 'fa-server'})
-      this.stats.push({label: 'Active users', value: data.UserCount, icon: 'fa-user'})
-      this.stats.push({label: 'Commands used', value: data.CMDCount, icon: 'fa-terminal'})
-      this.stats.push({label: 'Message processed', value: data.MSGCount, icon: 'fa-comments'})
-      this.stats.push({label: 'Songs Played', value: data.MusicCount, icon: 'fa-music'})
+    $.get(`${api}/overview`, (data) => {
+      $('#loader').hide()
+      this.version = data.version.version
+      this.codename = data.version.codename
+      this.stats.push({label: 'Active servers', value: data.stats.ServerCount, icon: 'fa-server'})
+      this.stats.push({label: 'Active users', value: data.stats.UserCount, icon: 'fa-user'})
+      this.stats.push({label: 'Commands used', value: data.stats.CMDCount, icon: 'fa-terminal'})
+      this.stats.push({label: 'Messages processed', value: data.stats.MSGCount, icon: 'fa-comments'})
+      this.stats.push({label: 'Songs Played', value: data.stats.MusicCount, icon: 'fa-music'})
     })
   }
 }
@@ -83,6 +84,7 @@ export default {
 .version span {
   border-radius: 2px;
   margin: 0 5px;}
+#loader { margin: 3rem auto; }
 @media screen and (max-width: 911px), print {
   .columns:not(.is-desktop) { display: block; }
    .card { max-width: 500px; } }
