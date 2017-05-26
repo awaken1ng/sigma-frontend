@@ -19,7 +19,7 @@ var config = {
     },
     navmenu: [
       { href: 'https://sigma.auroraproject.xyz/commands', text: 'Commands' },
-      { href: 'https://status.auroraproject.xyz/', text: 'Status' },
+      { href: '#/sigma/status', text: 'Status' },
       { href: 'https://sigma.auroraproject.xyz/leaderboard', text: 'Leaderboard' },
       { href: 'https://github.com/aurora-pro/apex-sigma', text: 'Github' },
       { href: 'https://discordapp.com/invite/Ze9EfTd', text: 'Discord' }

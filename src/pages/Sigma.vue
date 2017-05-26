@@ -29,31 +29,10 @@
       <div class="container">
         <div class="columns">
           <div class="column">
-            <div class="ui statistic" v-for="stat in stats">
-              <div class="value">
-                {{ stat.value }} <fa v-if=stat.icon :icon=stat.icon></fa>
-              </div>
-              <div class="label">
-                {{ stat.label }}
-              </div>
-            </div>
+            <stat v-for="stat in stats" :key=stat.label :label=stat.label :value=stat.value :icon=stat.icon></stat>
           </div>
         </div>
       </div>
-      <!--
-      <div class="container">
-        <div class="columns">
-          <div class="stack">
-            <div class="tile is-parent" v-for="stat in stats">
-              <article class="tile is-child box">
-                <p class="title">{{ stat.title }}</p>
-                <p class="subtitle">{{ stat.value }}</p>
-              </article>
-            </div>
-          </div>
-        </div>
-      </div> -->
-
     </section>
    </div>
 </template>
@@ -63,6 +42,7 @@ import $ from 'jquery'
 import Navigation from '@/components/Navigation'
 import Card from '@/components/Card'
 import Fa from '@/components/FaIcon'
+import Stat from '@/components/Stat'
 
 export default {
   name: 'Sigma-main',
@@ -74,7 +54,7 @@ export default {
       stats: []
     }
   },
-  components: { Navigation, Card, Fa },
+  components: { Navigation, Card, Fa, Stat },
   mounted () {
     document.title = 'Sigma: The Database'
     let api = this.$parent.api
@@ -84,9 +64,9 @@ export default {
     })
     $.get(`${api}/stats`, (data) => {
       this.stats.push({label: 'Active servers', value: data.ServerCount, icon: 'fa-server'})
-      this.stats.push({label: 'Active users', value: data.UserCount, icon: 'fa-user', pad: 2})
-      this.stats.push({label: 'Commands used', value: data.CMDCount, icon: 'fa-terminal', pad: 0})
-      this.stats.push({label: 'Message processed', value: data.MSGCount, icon: 'fa-comments', pad: 0})
+      this.stats.push({label: 'Active users', value: data.UserCount, icon: 'fa-user'})
+      this.stats.push({label: 'Commands used', value: data.CMDCount, icon: 'fa-terminal'})
+      this.stats.push({label: 'Message processed', value: data.MSGCount, icon: 'fa-comments'})
       this.stats.push({label: 'Songs Played', value: data.MusicCount, icon: 'fa-music'})
     })
   }
@@ -94,7 +74,6 @@ export default {
 </script>
 
 <style scoped>
-.hero { background-image: linear-gradient(160deg, #18ae90, #16826c 50%, #145246 75%); }
 .hero-body { margin: auto; }
 .hero .logo { max-height: 250px; }
 .hero .title, .hero .subtitle { color: #fff; }

@@ -1,8 +1,11 @@
+<template>
+  <i class="fa" :class=icon :style=style aria-hidden="true"></i>
+</template>
+
 <script>
 export default {
   name: 'fa',
   props: ['icon', 'size', 'pad'],
-  template: '<i class="fa" :class=icon :style=style aria-hidden="true"></i>',
   data () {
     return {
       style: { fontSize: 'inherit', paddingTop: null }

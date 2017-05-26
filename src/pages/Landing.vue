@@ -1,5 +1,5 @@
 <template>
-  <section class="hero is-fullheight splash">
+  <section class="hero is-fullheight">
     <div class="hero-body">
       <div class="columns container animated fadeIn">
         <div class="column">
@@ -44,7 +44,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.hero { background-image: linear-gradient(160deg, #18AE90 0%, #16826C 50%, #145246 75%) }
 .hero, .tile, .title, .subtitle { color: #fff; }
 .hero .columns, .hero .columns .column { margin: auto; }
 .logo { max-width: 400px; }
@@ -54,9 +53,6 @@ export default {
   background: unset;
   background-size: cover;
   transition: box-shadow .15s ease-in-out; }
-.tile a { display: block;
-  padding: 1.25rem 2.5rem 1.25rem 1.5rem;
-  width: 100% }
 .tile:hover { box-shadow: 0 0 20px rgba(0,0,0,0.75); cursor: pointer; }
 .tile.sigma { background-image: url("./../assets/SigmaTile.png"); }
 .tile.hastebin { background-image: url("./../assets/HasteTile.png"); }
