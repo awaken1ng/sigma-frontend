@@ -40,6 +40,7 @@ export default {
 
 <style scoped>
 .nav { padding: 5px; }
+.nav-toggle { height: auto; }
 .hoverline {
   vertical-align: middle;
   transform: translateZ(0);
