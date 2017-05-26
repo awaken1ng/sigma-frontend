@@ -18,7 +18,7 @@ export default new Router({
       component: Sigma
     },
     {
-      path: '/commands',
+      path: '/sigma/commands',
       name: 'Sigma - Command list',
       component: Commands
     }
