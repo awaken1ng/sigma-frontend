@@ -85,5 +85,4 @@ export default {
 @media screen and (max-width: 911px), print {
   .columns:not(.is-desktop) { display: block; }
    .card { max-width: 500px; } }
-.ui.statistic + .ui.statistic { margin: 0em 0em 0em 3em; }
 </style>
