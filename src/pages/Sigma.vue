@@ -6,7 +6,7 @@
         <img class="logo fadeIn" src="./../assets/logo_sigma_light.png">
         <h1 class="title fadeIn">This is Sigma, the Database Giant.</h1>
         <h2 class="subtitle fadeIn">A bot made to bring knowledge to your Discord server.</h2>
-        <a class="button fadeIn" href="https://discordapp.com/oauth2/authorize?client_id=216437513709944832&scope=bot&permissions=8">Add to Discord</a>
+        <a class="button fadeIn" :href=invite>Add to Discord</a>
         <br />
         <div class="version">
           <span class="tag is-white">Version {{ `${version.major}.${version.minor}.${version.patch}` }}</span> <span class="tag is-white">Codename {{ codename }}</span>
@@ -48,19 +48,20 @@ export default {
   name: 'Sigma-main',
   data () {
     return {
-      version: { major: '0', minor: '00', patch: '0000' },
-      codename: 'Kon',
-      makers: this.$parent.sigma.main.makers,
+      version: this.$root.sigma.main.placeholders.version,
+      codename: this.$root.sigma.main.placeholders.codename,
+      invite: this.$root.sigma.links.invite,
+      makers: this.$root.sigma.main.makers,
       stats: []
     }
   },
   components: { Navigation, Card, Fa, Stat },
   mounted () {
     document.title = 'Sigma: The Database'
-    let api = this.$parent.api
+    let api = this.$root.api
     $.get(`${api}/version`, (data) => {
-      this.codename = data.codename
       this.version = data.version
+      this.codename = data.codename
     })
     $.get(`${api}/stats`, (data) => {
       this.stats.push({label: 'Active servers', value: data.ServerCount, icon: 'fa-server'})

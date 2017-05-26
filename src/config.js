@@ -10,7 +10,15 @@ var config = {
     ]
   },
   sigma: {
+    links: {
+      invite: 'https://discordapp.com/oauth2/authorize?client_id=216437513709944832&scope=bot&permissions=8',
+      status: 'https://status.auroraproject.xyz/'
+    },
     main: {
+      placeholders: {
+        version: { major: '0', minor: '00', patch: '0000' },
+        codename: 'Kon'
+      },
       makers: [
         {name: 'Alex', about: 'The lead developer and original creator of Sigma. The resident asshat of the group, pretty fun though.', avatar: 'https://www.gravatar.com/avatar/44b9428f767bead3e3745fdeb9625637.png?s=128', overlay: 'python'},
         {name: 'Awakening', about: 'A crazy Russian hacker. Talks the least, seriously silent like a shadow but has the biggest personality!', avatar: 'https://www.gravatar.com/avatar/77467fb9f03e2c5ebdccbc8a548a1147.png?s=128', overlay: 'js'},

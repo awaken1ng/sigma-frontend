@@ -7,9 +7,11 @@ import App from './App'
 import router from './router'
 Vue.config.productionTip = false
 /* eslint-disable no-new */
+import Config from './config'
 new Vue({
   el: '#app',
   router,
   template: '<App class="animated fadeIn"/>',
-  components: { App }
+  components: { App },
+  data: Config
 })

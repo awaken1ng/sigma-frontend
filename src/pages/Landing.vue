@@ -35,8 +35,8 @@ export default {
   components: { Tile, Fa },
   data () {
     return {
-      projects: this.$parent.landing.projects,
-      others: this.$parent.landing.others
+      projects: this.$root.landing.projects,
+      others: this.$root.landing.others
     }
   }
 }
