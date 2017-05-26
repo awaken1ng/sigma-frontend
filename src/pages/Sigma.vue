@@ -49,7 +49,7 @@ export default {
   data () {
     return {
       version: { major: '0', minor: '00', patch: '0000' },
-      codename: '-',
+      codename: 'Kon',
       makers: this.$parent.sigma.main.makers,
       stats: []
     }
