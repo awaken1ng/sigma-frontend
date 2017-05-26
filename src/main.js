@@ -2,6 +2,8 @@ import './assets/animate_custom.sass'
 import './assets/semantic_custom.sass'
 import './assets/bulma_custom.sass'
 
+import './../node_modules/semantic-ui-css/components/accordion.js'
+
 import Vue from 'vue'
 import App from './App'
 import router from './router'

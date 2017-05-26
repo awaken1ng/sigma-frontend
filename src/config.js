@@ -25,13 +25,19 @@ var config = {
         {name: 'Valeth', about: "Just popped up out of nowhere and started changing all the code! I haven't regretted it yet. He likes dry stuff.", avatar: 'https://www.gravatar.com/avatar/17d3a152085c9a4d08254acc7ee5d06e.png?s=128', overlay: 'ruby'}
       ]
     },
-    navmenu: [
-      { href: 'https://sigma.auroraproject.xyz/commands', text: 'Commands' },
-      { href: '#/sigma/status', text: 'Status' },
-      { href: 'https://sigma.auroraproject.xyz/leaderboard', text: 'Leaderboard' },
-      { href: 'https://github.com/aurora-pro/apex-sigma', text: 'Github' },
-      { href: 'https://discordapp.com/invite/Ze9EfTd', text: 'Discord' }
-    ]
+    navmenu: {
+      common: {
+        left: [],
+        right: [
+        { href: '#/sigma/commands', text: 'Commands' },
+        { href: '#/sigma/status', text: 'Status' },
+        { href: 'https://sigma.auroraproject.xyz/leaderboard', text: 'Leaderboard' },
+        { href: 'https://github.com/aurora-pro/apex-sigma', text: 'Github' },
+        { href: 'https://discordapp.com/invite/Ze9EfTd', text: 'Discord' }
+        ]
+      },
+      conditional: {}
+    }
   }
 }
 export default config

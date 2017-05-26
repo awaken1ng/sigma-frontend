@@ -1,5 +1,5 @@
 <template>
-  <iframe :src=url width="100%" height="100%">
+  <iframe :src=url width="100%">
     <p>Your browser does not support iframes.</p>
   </iframe>
 </template>
@@ -12,5 +12,7 @@
 </script>
 
 <style scoped>
-  iframe { position: absolute; }
+  iframe {
+    position: absolute;
+    height: calc(100% - 3.5rem); }
 </style>

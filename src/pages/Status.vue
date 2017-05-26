@@ -15,6 +15,9 @@
       return {
         link: this.$root.sigma.links.status
       }
+    },
+    mounted () {
+      document.title = 'Aurora Project - Status'
     }
   }
 </script>

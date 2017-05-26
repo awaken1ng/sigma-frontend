@@ -38,6 +38,9 @@ export default {
       projects: this.$root.landing.projects,
       others: this.$root.landing.others
     }
+  },
+  mounted () {
+    document.title = 'Aurora Project'
   }
 }
 </script>
