@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import Frame from '@/components/Iframe'
+  import Frame from '@/components/IFrame'
   import Navigation from '@/components/Navigation'
   export default {
     name: 'Status',
