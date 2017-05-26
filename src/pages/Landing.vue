@@ -1,5 +1,5 @@
 <template>
-  <section class="hero is-fullheight splash">
+  <section class="hero is-fullheight">
     <div class="hero-body">
       <div class="columns container animated fadeIn">
         <div class="column">
@@ -44,7 +44,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.hero { background-image: linear-gradient(160deg, #18AE90 0%, #16826C 50%, #145246 75%) }
 .hero, .tile, .title, .subtitle { color: #fff; }
 .hero .columns, .hero .columns .column { margin: auto; }
 .logo { max-width: 400px; }

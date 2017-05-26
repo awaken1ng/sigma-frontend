@@ -94,7 +94,6 @@ export default {
 </script>
 
 <style scoped>
-.hero { background-image: linear-gradient(160deg, #18ae90, #16826c 50%, #145246 75%); }
 .hero-body { margin: auto; }
 .hero .logo { max-height: 250px; }
 .hero .title, .hero .subtitle { color: #fff; }

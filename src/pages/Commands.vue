@@ -35,6 +35,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.hero { background-image: linear-gradient(160deg, #18ae90, #16826c 50%, #145246 75%); }
-
 </style>

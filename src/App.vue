@@ -14,6 +14,7 @@ export default {
 
 <style>
 html { overflow-y: initial !important; }
+.hero { background-image: linear-gradient(160deg, #18ae90, #16826c 50%, #145246 75%); }
 .fa { vertical-align: baseline; }
 a.button {
   transition: all .15s ease-in-out;
