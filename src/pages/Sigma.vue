@@ -29,14 +29,7 @@
       <div class="container">
         <div class="columns">
           <div class="column">
-            <div class="ui statistic" v-for="stat in stats">
-              <div class="value">
-                {{ stat.value }} <fa v-if=stat.icon :icon=stat.icon></fa>
-              </div>
-              <div class="label">
-                {{ stat.label }}
-              </div>
-            </div>
+            <stat v-for="stat in stats" :key=stat.label :label=stat.label :value=stat.value :icon=stat.icon></stat>
           </div>
         </div>
       </div>
@@ -49,6 +42,7 @@ import $ from 'jquery'
 import Navigation from '@/components/Navigation'
 import Card from '@/components/Card'
 import Fa from '@/components/FaIcon'
+import Stat from '@/components/Stat'
 
 export default {
   name: 'Sigma-main',
@@ -60,7 +54,7 @@ export default {
       stats: []
     }
   },
-  components: { Navigation, Card, Fa },
+  components: { Navigation, Card, Fa, Stat },
   mounted () {
     document.title = 'Sigma: The Database'
     let api = this.$parent.api
