@@ -40,20 +40,6 @@
           </div>
         </div>
       </div>
-      <!--
-      <div class="container">
-        <div class="columns">
-          <div class="stack">
-            <div class="tile is-parent" v-for="stat in stats">
-              <article class="tile is-child box">
-                <p class="title">{{ stat.title }}</p>
-                <p class="subtitle">{{ stat.value }}</p>
-              </article>
-            </div>
-          </div>
-        </div>
-      </div> -->
-
     </section>
    </div>
 </template>
@@ -84,9 +70,9 @@ export default {
     })
     $.get(`${api}/stats`, (data) => {
       this.stats.push({label: 'Active servers', value: data.ServerCount, icon: 'fa-server'})
-      this.stats.push({label: 'Active users', value: data.UserCount, icon: 'fa-user', pad: 2})
-      this.stats.push({label: 'Commands used', value: data.CMDCount, icon: 'fa-terminal', pad: 0})
-      this.stats.push({label: 'Message processed', value: data.MSGCount, icon: 'fa-comments', pad: 0})
+      this.stats.push({label: 'Active users', value: data.UserCount, icon: 'fa-user'})
+      this.stats.push({label: 'Commands used', value: data.CMDCount, icon: 'fa-terminal'})
+      this.stats.push({label: 'Message processed', value: data.MSGCount, icon: 'fa-comments'})
       this.stats.push({label: 'Songs Played', value: data.MusicCount, icon: 'fa-music'})
     })
   }
