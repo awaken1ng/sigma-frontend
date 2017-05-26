@@ -1,5 +1,5 @@
 <template>
-  <nav class="nav animated fadeInDown">
+  <nav class="nav">
     <div class="nav-left">
       <a class="nav-item" href="/#">
         <img src="./../assets/logo_sigma.png" alt="">
