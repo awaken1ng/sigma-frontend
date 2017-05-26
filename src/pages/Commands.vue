@@ -53,6 +53,7 @@ export default {
         {
           text: 'Open all',
           class: 'sigma-cmd-open',
+          style: {display: 'none'},
           method: (event) => {
             $('.ui.accordion').accordion('open', 0)
             $(event.target).hide()
@@ -75,6 +76,7 @@ export default {
     $.get(`${api}/commands`, (data) => {
       this.commands = data
       $('#loader').hide()
+      $('.sigma-cmd-open').show()
     })
   },
   mounted () {
