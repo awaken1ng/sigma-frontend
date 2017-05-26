@@ -5,10 +5,8 @@
 </template>
 
 <script>
-import Config from './config'
 export default {
-  name: 'app',
-  data () { return Config }
+  name: 'app'
 }
 </script>
 

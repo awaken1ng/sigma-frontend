@@ -35,8 +35,8 @@ export default {
   components: { Tile, Fa },
   data () {
     return {
-      projects: this.$parent.landing.projects,
-      others: this.$parent.landing.others
+      projects: this.$root.landing.projects,
+      others: this.$root.landing.others
     }
   }
 }
@@ -44,6 +44,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.hero { background: linear-gradient(160deg, #1c816c, #165b4d 50%, #0b372f 75%); }
 .hero, .tile, .title, .subtitle { color: #fff; }
 .hero .columns, .hero .columns .column { margin: auto; }
 .logo { max-width: 400px; }

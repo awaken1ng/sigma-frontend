@@ -26,7 +26,7 @@ export default {
   name: 'Navigation',
   data () {
     return {
-      navmenu: this.$parent.$parent.sigma.navmenu
+      navmenu: this.$root.sigma.navmenu
     }
   },
   methods: {

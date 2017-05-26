@@ -1,15 +1,20 @@
 <template>
   <div id="sigma-status">
     <Navigation></Navigation>
-    <frame url="https://status.auroraproject.xyz/"></iframe>
+    <frame :url=link></iframe>
   </div>
 </template>
 
 <script>
-  import Frame from '@/components/Iframe'
+  import Frame from '@/components/IFrame'
   import Navigation from '@/components/Navigation'
   export default {
     name: 'Status',
-    components: { Navigation, Frame }
+    components: { Navigation, Frame },
+    data () {
+      return {
+        link: this.$root.sigma.links.status
+      }
+    }
   }
 </script>
