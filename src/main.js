@@ -13,7 +13,7 @@ import Config from './config'
 new Vue({
   el: '#app',
   router,
-  template: '<App class="animated fadeIn"/>',
+  template: '<App/>',
   components: { App },
   data: Config
 })

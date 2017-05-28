@@ -1,10 +1,10 @@
 <template>
   <section class="hero is-fullheight">
     <div class="hero-body">
-      <div class="columns container animated fadeIn">
-        <div class="column">
+      <div class="columns container">
+        <div class="column animated fadeIn">
           <div class="has-text-centered">
-            <img class="logo" src="./../assets/logo_ap.png">
+            <img class="logo animated fadeIn" src="./../assets/logo_ap.png">
             <h1 class="title">Welcome, to the Aurora Project</h1>
             <h2 class="subtitle">
               We specialize in both
@@ -15,7 +15,7 @@
           </div>
         </div>
 
-        <div class="column">
+        <div class="column animated fadeIn">
             <h1 class="title has-text-centered"><fa icon='fa-code' size=30></fa> Our projects</h1>
             <tile v-for="project in projects" :key=project.id :id=project.id :title=project.title :description=project.description :target=project.target></tile>
 

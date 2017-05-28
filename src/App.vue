@@ -6,7 +6,10 @@
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  mounted () {
+    document.getElementById('preloader').classList += 'animated fadeOut'
+  }
 }
 </script>
 
