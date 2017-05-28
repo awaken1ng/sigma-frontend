@@ -21,6 +21,7 @@ a.button {
   transition: all .15s ease-in-out;
   color: #1B6F5F;
   border-color: #FFF; }
+a.button:focus,
 a.button:hover {
   color: #FFF;
   background-color: #1ABC9C;
