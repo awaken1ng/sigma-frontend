@@ -51,6 +51,7 @@ export default {
 <style scoped>
 .nav { padding: 5px; }
 .nav-toggle { height: auto; }
+.nav a.nav-item { outline: none; }
 
 .hoverline {
   vertical-align: middle;
