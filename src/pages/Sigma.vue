@@ -6,7 +6,7 @@
         <img class="logo fadeIn" src="./../assets/logo_sigma_light.png">
         <h1 class="title fadeIn">This is Sigma, the Database Giant.</h1>
         <h2 class="subtitle fadeIn">A bot made to bring knowledge to your Discord server.</h2>
-        <a class="button fadeIn" :href=invite>Add to Discord</a>
+        <a class="button fadeIn" :href=invite target="_blank">Add to Discord</a>
         <br />
         <div class="version">
           <span class="tag is-white">Version {{ `${version.major}.${version.minor}.${version.patch}` }}</span> <span class="tag is-white">Codename {{ codename }}</span>
