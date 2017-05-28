@@ -6,7 +6,10 @@
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  mounted () {
+    document.getElementById('preloader').classList += 'animated fadeOut'
+  }
 }
 </script>
 
@@ -18,14 +21,20 @@ a.button {
   transition: all .15s ease-in-out;
   color: #1B6F5F;
   border-color: #FFF; }
+a.button:focus,
 a.button:hover {
   color: #FFF;
   background-color: #1ABC9C;
   border-color: #1ABC9C; }
-::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar {
+  background-color: #F1F1F1;
+  border-left: 1px solid #fff;
+}
 ::-webkit-scrollbar-thumb {
-  background: #7a7a7a;
-  border-radius: 2px; }
+  background-color: #CDCDCD;
+  border: 3px solid #F1F1F1;
+}
+::-webkit-scrollbar-thumb:hover { background-color: #A8A8A8; }
 .ui {
   font-size: 14px;
   line-height: 20px; }

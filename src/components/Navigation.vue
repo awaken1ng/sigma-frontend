@@ -1,7 +1,7 @@
 <template>
   <nav class="nav">
     <div class="nav-left">
-      <a class="nav-item" href="/#">
+      <a class="nav-item hoverline logo" href="/#">
         <img src="./../assets/logo_sigma.png" alt="">
       </a>
       <a class="nav-item hoverline" href="/#sigma">Home</a>
@@ -51,6 +51,8 @@ export default {
 <style scoped>
 .nav { padding: 5px; }
 .nav-toggle { height: auto; }
+.nav a.nav-item { outline: none; }
+.nav a.nav-item.logo.hoverline:hover:before { right: 100%; }
 
 .hoverline {
   vertical-align: middle;
