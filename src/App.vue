@@ -8,7 +8,9 @@
 export default {
   name: 'app',
   mounted () {
-    document.getElementById('preloader').classList += 'animated fadeOut'
+    document.getElementById('preloader').classList.add('animated', 'fadeOut')
+    document.getElementById('preloader').getElementsByClassName('dimmer')[0].classList.add('animated', 'fadeOut')
+    document.getElementById('preloader').getElementsByTagName('section')[0].classList.add('animated', 'fadeOut')
   }
 }
 </script>
