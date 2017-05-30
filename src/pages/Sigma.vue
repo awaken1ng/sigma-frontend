@@ -3,13 +3,14 @@
     <Navigation></Navigation>
     <section class="hero fadeIn" >
       <div class="hero-body has-text-centered animated fadeIn">
-        <img class="logo fadeIn" src="./../assets/logo_sigma_light.png">
-        <h1 class="title fadeIn">This is Sigma, the Database Giant.</h1>
-        <h2 class="subtitle fadeIn">A bot made to bring knowledge to your Discord server.</h2>
-        <a class="button fadeIn" :href=invite target="_blank">Add to Discord</a>
+        <img class="logo animated fadeIn" src="./../assets/logo_sigma_light.png">
+        <h1 class="title animated fadeIn">This is Sigma, the Database Giant.</h1>
+        <h2 class="subtitle animated fadeIn">A bot made to bring knowledge to your Discord server.</h2>
+        <a class="button animated fadeIn" :href=invite target="_blank">Add to Discord</a>
         <br />
         <div class="version">
-          <span class="tag is-white">Version {{ `${version.major}.${version.minor}.${version.patch}` }}</span> <span class="tag is-white">Codename {{ codename }}</span>
+          <span class="tag is-white animated fadeIn" v-if=version>Version {{ `${version.major}.${version.minor}.${version.patch}` }}</span>
+          <span class="tag is-white animated fadeIn" v-if=codename>Codename {{ codename }}</span>
         </div>
       </div>
     </section>
@@ -50,8 +51,8 @@ export default {
   name: 'Sigma-main',
   data () {
     return {
-      version: this.$root.sigma.main.placeholders.version,
-      codename: this.$root.sigma.main.placeholders.codename,
+      version: false, // this.$root.sigma.main.placeholders.version,
+      codename: false, // this.$root.sigma.main.placeholders.codename,
       invite: this.$root.sigma.links.invite,
       makers: this.$root.sigma.main.makers,
       stats: []
@@ -76,14 +77,14 @@ export default {
 </script>
 
 <style scoped>
-.hero-body { margin: auto; }
+.hero-body { margin: auto; padding-bottom: 2rem; }
 .hero .logo { max-height: 250px; }
 .hero .title, .hero .subtitle { color: #fff; }
 .tag.is-white { color: #1B6F5F; }
-.version { padding-top: 1rem; }
+.version { margin-top: 1em; min-height: 1.68em; }
 .version span {
   border-radius: 2px;
-  margin: 0 5px;}
+  margin: 0 5px; }
 #loader { margin: 3rem auto; }
 @media screen and (max-width: 911px), print {
   .columns:not(.is-desktop) { display: block; }
