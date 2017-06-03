@@ -18,5 +18,6 @@ export default {
 a {
   display: block;
   color: inherit;
-  padding: 1.25rem 2.5rem 1.25rem 1.5rem; }
+  padding: 1.25rem 2.5rem 1.25rem 1.5rem;
+  width: 100%; }
 </style>
