@@ -30,8 +30,8 @@ var config = {
         left: [],
         right: [
         { href: '#/sigma/commands', text: 'Commands' },
-        { href: '#/sigma/status', text: 'Status' },
-        { href: 'https://sigma.auroraproject.xyz/leaderboard', text: 'Leaderboard' },
+        // { href: '#/sigma/status', text: 'Status' },
+        // { href: 'https://sigma.auroraproject.xyz/leaderboard', text: 'Leaderboard' },
         { href: 'https://github.com/aurora-pro/apex-sigma', text: 'Github' },
         { href: 'https://discordapp.com/invite/Ze9EfTd', text: 'Discord' }
         ]
