@@ -19,8 +19,8 @@
             <h1 class="title has-text-centered"><fa icon='fa-code' size=30></fa> Our projects</h1>
             <tile v-for="project in projects" :key=project.id :id=project.id :title=project.title :description=project.description :target=project.target></tile>
 
-            <h1 class="title has-text-centered" style="margin-top: 1.5rem;"><fa icon='fa-code-fork' size=30></fa> Other</h1>
-            <tile v-for="project in others" :key=project.id :id=project.id :title=project.title :description=project.description :target=project.target></tile>
+            <!-- <h1 class="title has-text-centered" style="margin-top: 1.5rem;"><fa icon='fa-code-fork' size=30></fa> Other</h1> -->
+            <!-- <tile v-for="project in others" :key=project.id :id=project.id :title=project.title :description=project.description :target=project.target></tile> -->
         </div>
       </div>
     </div>
