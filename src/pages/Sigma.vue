@@ -62,15 +62,18 @@ export default {
   mounted () {
     document.title = 'Sigma: The Database'
     let api = this.$root.api
-    $.get(`${api}/overview`, (data) => {
+    $.get(`${api}/version`, (data) => {
+      this.version = data.version
+      this.codename = data.codename
+    })
+    $.get(`${api}/stats`, (data) => {
       $('#loader').hide()
-      this.version = data.version.version
-      this.codename = data.version.codename
-      this.stats.push({label: 'Active servers', value: data.stats.ServerCount, icon: 'fa-server'})
-      this.stats.push({label: 'Active users', value: data.stats.UserCount, icon: 'fa-user'})
-      this.stats.push({label: 'Commands used', value: data.stats.CMDCount, icon: 'fa-terminal'})
-      this.stats.push({label: 'Messages processed', value: data.stats.MSGCount, icon: 'fa-comments'})
-      this.stats.push({label: 'Songs Played', value: data.stats.MusicCount, icon: 'fa-music'})
+      data = data.data.stats
+      this.stats.push({label: 'Active servers', value: data.general.population.guilds, icon: 'fa-server'})
+      this.stats.push({label: 'Active users', value: data.general.population.members, icon: 'fa-user'})
+      this.stats.push({label: 'Commands used', value: data.general.cmd_count, icon: 'fa-terminal'})
+      this.stats.push({label: 'Messages processed', value: data.events.message, icon: 'fa-comments'})
+      this.stats.push({label: 'Songs Played', value: data.special.songs_played, icon: 'fa-music'})
     })
   }
 }
