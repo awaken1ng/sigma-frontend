@@ -1,13 +1,10 @@
 <template>
-  <div id="sigma-commands">
-    <section class="hero is-fullheight"></section>
-    <Navigation></Navigation>
+  <div>
     <loader id="loader"></loader>
-    <div class="container animated fadeIn" style="width: auto;">
+    <div class="container fadeIn" style="width: auto;">
       <h1 class="title"><fa icon="fa-terminal"></fa> Commands</h1>
-
       <div class="ui styled accordion category animated fadeIn" v-for="category in commands">
-        <div class="title"><i class="dropdown icon"></i><fa :icon=category.icon></fa> {{category.name }}</div>
+        <div class="title"><i class="dropdown icon"></i><icon :name=category.icon></icon> {{category.name }}</div>
         <div class="content commands">
           <div class="command" v-for="command in category.commands">
             <h1>{{ command.names.primary }}</h1>
@@ -27,7 +24,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </template>
@@ -37,6 +33,7 @@ import $ from 'jquery'
 import './../../node_modules/semantic-ui-css/components/accordion.js'
 import Navigation from '@/components/Navigation'
 import Fa from '@/components/FaIcon'
+import icon from '@/components/Icon'
 import Loader from '@/components/Loader'
 export default {
   name: 'Sigma-commands',
@@ -46,45 +43,53 @@ export default {
       commands: []
     }
   },
-  components: { Navigation, Fa, Loader },
+  components: { Navigation, Fa, icon, Loader },
   beforeMount () {
-    this.$root.sigma.navmenu.conditional['sigma-commands'] = {
-      left: [
-        {
-          text: 'Open all',
-          class: 'sigma-cmd-open',
-          style: {display: 'none'},
-          method: (event) => {
-            $('.ui.accordion').accordion('open', 0)
-            $(event.target).hide()
-            $('.sigma-cmd-close').show()
-          }
-        },
-        {
-          text: 'Close all',
-          class: 'sigma-cmd-close',
-          style: {display: 'none'},
-          method: (event) => {
-            $('.ui.accordion').accordion('close', 0)
-            $(event.target).hide()
-            $('.sigma-cmd-open').show()
-          }
+    // let bus = this.$root.bus
+    // bus.$emit('backdrop-switch', 'light')
+    // bus.$emit('nav-show')
+    this.$root.navigation.conditional = [
+      {
+        text: 'Open all',
+        class: 'sigma-cmd-open',
+        style: {display: 'block'},
+        method: (event) => {
+          $('.ui.accordion').accordion('open', 0)
+          $(event.target).hide()
+          $('.sigma-cmd-close').show()
         }
-      ]
-    }
+      },
+      {
+        text: 'Close all',
+        class: 'sigma-cmd-close',
+        style: {display: 'none'},
+        method: (event) => {
+          $('.ui.accordion').accordion('close', 0)
+          $(event.target).hide()
+          $('.sigma-cmd-open').show()
+        }
+      }
+      // ]
+    ]
     let api = this.$root.api
     $.get(`${api}/commands`, (data) => {
+      // if (data.message == 'Internal Server Error') { error }
       this.commands = data
       $('#loader').hide()
       $('.sigma-cmd-open').show()
+    }).fail(() => {
+      $('#loader .loader').addClass('animated infinite pulse')
+      $('#loader .loader').addClass('failed')
     })
   },
-  mounted () {
-    document.title = 'Sigma: The Database - Commands'
+  destroyed () {
+    this.$root.navigation.conditional = null
   },
   updated () {
     if (!this.initialized) {
       $('.ui.accordion').accordion({
+        // animateChildren: true,
+        // duration: 500,
         onOpen: () => {
           let total = $('.ui.accordion').length
           let active = $('.ui.accordion .title.active').length
@@ -133,7 +138,7 @@ export default {
 .ui.styled.accordion .title:hover, .ui.styled.accordion .title.active { color: #1B6F5F  }
 .command:not(:last-child) { margin-bottom: 2rem; }
 .command h1 { font-size: 1.5rem; }
-.command h1, .aliases strong { color: #1B6F5F; }
+.command h1, .aliases strong { color: #1B6F5F !important; }
 .command h1, .command p { margin-bottom: 0.5rem; }
 p.usage { margin-bottom: 0.75rem; }
 .usage span {
@@ -147,4 +152,19 @@ p.usage { margin-bottom: 0.75rem; }
 .owner strong { color: #DB0000; }
 .owner span { color: #636c72; }
 .owner span strong { color: #636c72; }
+
+.header { color: #1B6F5F !important; }
+.ui.accordion .content { padding: 1rem; }
+.ui.accordion .title:not(.ui) {
+  background: #fff;
+  border-radius: 5px;
+  padding: 0.75rem 1rem;
+  font-weight: 700; }
+.ui.accordion .title { color: rgba(99,99,99,.9); }
+.ui.accordion .accordion .title, .ui.accordion .title { transition: background .1s ease,color .1s ease; }
+.ui.accordion .title.active, .ui.accordion .title:hover { color: #1b6f5f; }
+.ui.cards > .card, .ui.card {
+  display: inline-block;
+  text-align: initial;
+  box-shadow: none; }
 </style>

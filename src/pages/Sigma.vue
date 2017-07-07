@@ -1,12 +1,11 @@
 <template>
-  <div id="sigma">
-    <Navigation></Navigation>
+  <div>
     <section class="hero fadeIn" >
       <div class="hero-body has-text-centered animated fadeIn">
         <img class="logo animated fadeIn" src="./../assets/logo_sigma_light.png">
         <h1 class="title animated fadeIn">This is Sigma, the Database Giant.</h1>
         <h2 class="subtitle animated fadeIn">A bot made to bring knowledge to your Discord server.</h2>
-        <a class="button animated fadeIn" :href=invite target="_blank">Add to Discord</a>
+        <a class="button animated fadeIn" :href=links.invite target="_blank">Add to Discord</a>
         <br />
         <div class="version">
           <span class="tag is-white animated fadeIn" v-if=version>Version {{ `${version.major}.${version.minor}.${version.patch}` }}</span>
@@ -15,18 +14,19 @@
       </div>
     </section>
 
-    <section class="section makers animated fadeIn">
-      <h1 class="title has-text-centered"><fa icon="fa-coffee" size=30></fa> The Makers</h1>
+    <!-- <section class="section makers animated fadeIn">
+      <h1 class="animated fadeIn title has-text-centered"><fa icon="fa-coffee" size=30></fa> The Makers</h1>
       <div class="container">
         <div class="columns">
           <div class="column" v-for="maker in makers">
-            <card :key=maker.name :avatar=maker.avatar :overlay=maker.overlay :name=maker.name :content=maker.about></card>
+            <card class="animated fadeIn" :key=maker.name :avatar=maker.avatar :overlay=maker.overlay :name=maker.name :content=maker.about></card>
           </div>
         </div>
       </div>
-    </section>
-    <section class="section has-text-centered stats animated fadeIn">
-      <h1 class="title "><fa icon="fa-table" size=30></fa> Stats</h1>
+    </section> -->
+
+    <section class="animated fadeIn stats section has-text-centered">
+      <h1 class="animated fadeIn title"><fa icon="fa-table" size=30></fa> Stats</h1>
       <div class="container">
         <loader id="loader" inline="true"></loader>
         <div class="columns">
@@ -48,19 +48,24 @@ import Stat from '@/components/Stat'
 import Loader from '@/components/Loader'
 
 export default {
-  name: 'Sigma-main',
+  name: 'sigma',
   data () {
     return {
-      version: false, // this.$root.sigma.main.placeholders.version,
-      codename: false, // this.$root.sigma.main.placeholders.codename,
-      invite: this.$root.sigma.links.invite,
-      makers: this.$root.sigma.main.makers,
+      version: false,
+      codename: false,
+      links: this.$root.pages.sigma.links,
+      makers: this.$root.pages.sigma.main.makers,
       stats: []
     }
   },
   components: { Navigation, Card, Fa, Stat, Loader },
+  beforeMount () {
+    let bus = this.$root.eventBus
+    bus.$emit('nav-show')
+    bus.$emit('page-switch', this.$route.name)
+    bus.$emit('backdrop-light')
+  },
   mounted () {
-    document.title = 'Sigma: The Database'
     let api = this.$root.api
     $.get(`${api}/version`, (data) => {
       this.version = data.version
@@ -80,7 +85,11 @@ export default {
 </script>
 
 <style scoped>
-.hero-body { margin: auto; padding-bottom: 2rem; }
+.hero-body {
+  margin: auto;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+}
 .hero .logo { max-height: 250px; }
 .hero .title, .hero .subtitle { color: #fff; }
 .tag.is-white { color: #1B6F5F; }
@@ -88,6 +97,7 @@ export default {
 .version span {
   border-radius: 2px;
   margin: 0 5px; }
+.stats .container { min-height: 9rem; }
 #loader { margin: 3rem auto; }
 @media screen and (max-width: 911px), print {
   .columns:not(.is-desktop) { display: block; }
