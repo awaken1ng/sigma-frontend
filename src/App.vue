@@ -26,8 +26,8 @@ export default {
 
 <style>
 html { overflow-y: initial !important; } /* Reset vertical overflow */
-/*body, button, input, select, textarea { font-family: 'Exo 2'; }*/
-/*.ui { font-family: 'Exo 2'; }*/
+body, button, input, select, textarea { font-family: 'Exo 2'; }
+.ui { font-family: 'Exo 2'; }
 #app { /* Stretch the application into fullscreen */
   position: absolute;
   display: flex;
