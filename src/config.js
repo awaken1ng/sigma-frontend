@@ -48,7 +48,7 @@ var config = {
         credits: [
           { name: 'WaniKani Community Discord', image: 'https://cdn.discordapp.com/icons/219894896172072971/87bfee24d28fbee521278122c4083948.jpg?size=128' },
           { name: 'Candy Kingdom 🍭', image: 'https://cdn.discordapp.com/icons/287978175927943188/9d85f5d8c92384307e272115523d01f6.jpg?size=128' },  // CK has non break space in the name, which is Alt+0160
-          { name: 'Royal Destiny - Gaming Community', image: 'https://cdn.discordapp.com/attachments/207939037909090304/332852425616785408/unknown.png' }
+          { name: 'Royal Destiny', image: 'https://cdn.discordapp.com/attachments/207939037909090304/332852425616785408/unknown.png' }
         ]
       }
     }
