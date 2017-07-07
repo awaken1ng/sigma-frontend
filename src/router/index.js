@@ -3,30 +3,20 @@ import Router from 'vue-router'
 import Landing from '@/pages/Landing'
 import Sigma from '@/pages/Sigma'
 import Commands from '@/pages/Commands'
-import Status from '@/pages/Status'
-Vue.use(Router)
+import About from '@/pages/About'
+import NotFound from '@/pages/NotFound'
 
-export default new Router({
+Vue.use(Router)
+var router = new Router({
   routes: [
-    {
-      path: '/',
-      name: 'Landing',
-      component: Landing
-    },
-    {
-      path: '/sigma',
-      name: 'Sigma',
-      component: Sigma
-    },
-    {
-      path: '/sigma/commands',
-      name: 'Sigma - Command list',
-      component: Commands
-    },
-    {
-      path: '/sigma/status',
-      name: 'Sigma - Status',
-      component: Status
-    }
+    { path: '*', meta: { title: 'Aurora Project - Not found' }, name: 'ap-notfound', component: NotFound },
+    { path: '/', meta: { title: 'Aurora Project' }, name: 'ap-landing', component: Landing },
+    { path: '/sigma', meta: { title: 'Sigma: The Database' }, name: 'sigma', component: Sigma },
+    { path: '/sigma/commands', meta: { title: 'Sigma: The Database - Commands' }, name: 'sigma-commands', component: Commands },
+    { path: '/sigma/about', meta: { title: 'Sigma: The Database - About' }, name: 'sigma-about', component: About }
   ]
 })
+router.afterEach((to, from) => {
+  document.title = to.meta.title
+})
+export default router

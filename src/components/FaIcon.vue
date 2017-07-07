@@ -1,5 +1,5 @@
 <template>
-  <i class="fa" :class=icon :style=style aria-hidden="true"></i>
+  <i class="fa animated fadeIn" :class=icon :style=style aria-hidden="true"></i>
 </template>
 
 <script>

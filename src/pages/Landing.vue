@@ -16,11 +16,14 @@
         </div>
 
         <div class="column animated fadeIn">
+          <div v-if=projects>
             <h1 class="title has-text-centered"><fa icon='fa-code' size=30></fa> Our projects</h1>
             <tile v-for="project in projects" :key=project.id :id=project.id :title=project.title :description=project.description :target=project.target></tile>
-
-            <!-- <h1 class="title has-text-centered" style="margin-top: 1.5rem;"><fa icon='fa-code-fork' size=30></fa> Other</h1> -->
-            <!-- <tile v-for="project in others" :key=project.id :id=project.id :title=project.title :description=project.description :target=project.target></tile> -->
+          </div>
+          <div v-if=other>
+            <h1 class="title has-text-centered" style="margin-top: 1.5rem;"><fa icon='fa-code-fork' size=30></fa> Other</h1>
+            <tile v-for="project in other" :key=project.id :id=project.id :title=project.title :description=project.description :target=project.target></tile>
+          </div>
         </div>
       </div>
     </div>
@@ -35,19 +38,32 @@ export default {
   components: { Tile, Fa },
   data () {
     return {
-      projects: this.$root.landing.projects,
-      others: this.$root.landing.others
+      projects: this.$root.pages.landing.projects,
+      other: this.$root.pages.landing.others
     }
   },
-  mounted () {
-    document.title = 'Aurora Project'
+  beforeMount () {
+    // console.log(this.$store)
+    // let store = this.$root.store
+    // store.commit('show')
+    // store.commit('hide')
+    let bus = this.$root.eventBus
+    // bus.$emit('backdrop-switch', 'dark')
+    bus.$emit('backdrop-dark')
+    bus.$emit('nav-hide')
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.hero { background: linear-gradient(160deg, #1c816c, #165b4d 50%, #0b372f 75%); }
+.view {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: unset;
+  color: white;
+}
+/*.hero { background: linear-gradient(160deg, #1c816c, #165b4d 50%, #0b372f 75%); }*/
 .hero, .tile, .title, .subtitle { color: #fff; }
 .hero .columns, .hero .columns .column { margin: auto; }
 .logo { max-width: 400px; }

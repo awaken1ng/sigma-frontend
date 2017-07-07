@@ -28,7 +28,9 @@ module.exports = {
     }
   },
   externals: {
-    'jquery': 'jQuery'
+    'jquery': 'jQuery',
+    // 'vue': 'Vue',
+    // 'vue-router': 'VueRouter'
   },
   plugins: [
     new webpack.ProvidePlugin({
