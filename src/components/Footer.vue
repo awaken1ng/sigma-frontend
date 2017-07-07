@@ -9,7 +9,7 @@
             </p>
           </div>
           <div class="column">
-            <a class="icon" href="https://github.com/aurora-pro"><icon name="github"></icon> Github</a>
+            <a class="icon" href="https://github.com/aurora-pro"><icon name="gh"></icon> Github</a>
             <span class="separator">|</span><a class="icon" href="https://discordapp.com/invite/Ze9EfTd"><icon name="discord"></icon> Discord</a>
           </div>
         </div>
@@ -29,9 +29,6 @@ export default {
 
 <style scoped>
 footer {
-  left: 0;
-  right: 0;
-  bottom: 0;
   padding: 3rem 1.5rem;
 }
 p, a,span { color: white; }

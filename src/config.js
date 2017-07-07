@@ -22,7 +22,7 @@ var config = {
     landing: {
       projects: [
         {id: 'sigma', title: 'Apex Sigma', description: 'A bot made to bring knowledge to your discord server.', target: '/#sigma'},
-        {id: 'bdlinestickers', title: 'BetterDiscord LINE Stickers', description: 'A BetterDiscord plugin to add LINE stickers into emote menu', target: 'https://github.com/awaken1ng/bd-linestickers'}
+        {id: 'bdlinestickers', title: 'BetterDiscord LINE Stickers', description: 'A BetterDiscord plugin to add LINE stickers into emote menu.', target: 'https://github.com/awaken1ng/bd-linestickers'}
       ],
       others: null // [
         // {id: 'hastebin', title: 'Hastebin', description: 'Just a regular hastebin, hosted by us.', target: 'https://haste.auroraproject.xyz'}
