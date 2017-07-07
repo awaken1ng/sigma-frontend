@@ -111,7 +111,7 @@ export default {
   display: flex;
   flex-direction: column;
   padding: 0 1rem 0.5rem 1rem; }
-.credits .credit h6 { max-width: 128px; }
+.credits .credit { width: 175px; }
 .credit .image,
 .credit h6 {
   align-self: center;

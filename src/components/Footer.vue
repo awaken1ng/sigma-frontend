@@ -9,12 +9,8 @@
             </p>
           </div>
           <div class="column">
-            <a class="icon" href="https://github.com/aurora-pro">
-              <icon name="github"></icon> Github
-            </a><br />
-            <a class="icon" href="https://discordapp.com/invite/Ze9EfTd">
-              <icon name="discord"></icon> Discord
-            </a>
+            <a class="icon" href="https://github.com/aurora-pro"><icon name="github"></icon> Github</a>
+            <span class="separator">|</span><a class="icon" href="https://discordapp.com/invite/Ze9EfTd"><icon name="discord"></icon> Discord</a>
           </div>
         </div>
       </div>
@@ -38,7 +34,7 @@ footer {
   bottom: 0;
   padding: 3rem 1.5rem;
 }
-p, a { color: white; }
+p, a,span { color: white; }
 .columns { align-items: center; }
 /*.container { padding: 1.5rem; }*/
 /* Space paragraphs in the footer */
@@ -47,4 +43,6 @@ div.content > p:not(:last-child) { padding: 1rem; }
 .robots { color: #8fa9bc; }
 .foxes { color: #aa6532; }
 .tomatoes { color: #b03232; }
+
+.container .column .icon { margin: 0 1rem; }
 </style>
