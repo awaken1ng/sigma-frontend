@@ -39,13 +39,7 @@
         <loader id="loader" inline style="margin: 1rem 0"></loader>
         <div v-for="donor in donors" class="credit">
           <figure class="image is-96x96"><img :src=donor.avatar></figure>
-          <div class="ribbon tier" :class="'tier-' + donor.tier">
-            <div class="container">
-              <div class="base"></div>
-              <div class="left corner"></div>
-              <div class="right corner"></div>
-            </div>
-          </div>
+          <ribbon :class="'tier-' + donor.tier"></ribbon>
           <h6>{{ donor.name }}</h6>
         </div>
       </div>
@@ -57,9 +51,8 @@
 import $ from 'jquery'
 import Navigation from '@/components/Navigation'
 import Card from '@/components/Card'
-import Fa from '@/components/FaIcon'
 import Icon from '@/components/Icon'
-import Stat from '@/components/Stat'
+import Ribbon from '@/components/Ribbon'
 import Loader from '@/components/Loader'
 
 export default {
@@ -71,14 +64,7 @@ export default {
       donors: []
     }
   },
-  components: { Navigation, Card, Fa, Icon, Stat, Loader },
-  // beforeMount () {
-  //   let bus = this.$root.eventBus
-  //   bus.$emit('nav-show')
-  //   bus.$emit('page-switch', this.$route.name)
-  //   bus.$emit('backdrop-light')
-  //   document.title = this.$route.meta.title
-  // },
+  components: { Navigation, Card, Icon, Ribbon, Loader },
   mounted () {
     let api = this.$root.api
     $.get(`${api}/donors`, (data) => {
@@ -123,57 +109,6 @@ export default {
   z-index: 5; }
 .credit .image img { border-radius: 5rem; }
 
-/* Ribbon styling */
-
-/* Tiers */
-/* Cavansite*/
-.donors .credit .ribbon.tier-4 .corner { background: #00AFBF; }
-.donors .credit .ribbon.tier-4 .container {
-  border-left: 1px solid #005363;
-  border-right: 1px solid #005363; }
-.donors .credit .ribbon.tier-4 .base:after {
-  border-left: 1px dashed #005363;
-	border-right: 1px dashed #005363; }
-.donors .credit .ribbon.tier-4 .base:before {
-	border-left: 1px dashed #05CDDE;
-	border-right: 1px dashed #05CDDE; }
-
-/* Beryl */
-.donors .credit .ribbon.tier-3 .corner { background: #FFD100; }
-.donors .credit .ribbon.tier-3 .container {
-  border-left: 1px solid #796500;
-  border-right: 1px solid #796500; }
-.donors .credit .ribbon.tier-3 .base:after {
-  border-left: 1px dashed #796500;
-	border-right: 1px dashed #796500; }
-.donors .credit .ribbon.tier-3 .base:before {
-	border-left: 1px dashed #FFFF01;
-	border-right: 1px dashed #FFFF01; }
-
-/* Hiddenite */
-.donors .credit .ribbon.tier-2 .corner { background: #00BB58; }
-.donors .credit .ribbon.tier-2 .container {
-  border-left: 1px solid #005A2D;
-  border-right: 1px solid #005A2D; }
-.donors .credit .ribbon.tier-2 .base:after {
-  border-left: 1px dashed #005A2D;
-	border-right: 1px dashed #005A2D; }
-.donors .credit .ribbon.tier-2 .base:before {
-	border-left: 1px dashed #01D979;
-	border-right: 1px dashed #01D979; }
-
-/* Ametrine */
-.donors .credit .ribbon.tier-1 .corner { background: #BA8EFF; }
-.donors .credit .ribbon.tier-1 .container {
-  border-left: 1px solid #613DC1;
-  border-right: 1px solid #613DC1; }
-.donors .credit .ribbon.tier-1 .base:after {
-  border-left: 1px dashed #613DC1;
-	border-right: 1px dashed #613DC1; }
-.donors .credit .ribbon.tier-1 .base:before {
-	border-left: 1px dashed #E3B4FF;
-	border-right: 1px dashed #E3B4FF; }
-
 .donors .credit .ribbon {
   left: 54px;
   bottom: 33px;
@@ -181,47 +116,4 @@ export default {
 	margin: 0px auto 0;
   padding-top: 95px;
 	overflow: hidden; }
-
-.ribbon .container {
-	position: relative;
-	width: 20px;
-	height: 20px;
-	overflow: hidden;
-	margin: 0 auto;
-	border-left: 1px solid #292929;
-	border-right: 1px solid #292929; }
-
-.ribbon .base {
-	height: 10px;
-	width: 100px;
-	position: relative;
-	z-index: 2; }
-
-
-.ribbon .base::after,
-.ribbon .base::before {
-  content: '';
-	position: absolute;
-	top: 0;
-	width: 14px;
-  height: 15px; }
-.ribbon .base:after {
-	left: 2px;
-	border-left: 1px dashed #292929;
-	border-right: 1px dashed #292929; }
-.ribbon .base:before {
-	left: 3px;
-	border-left: 1px dashed #6D6D6D;
-	border-right: 1px dashed #6D6D6D; }
-
-.ribbon .corner {
-  position: absolute;
-  top: -40px;
-  width: 50px;
-	height: 50px;
-  z-index: 1;
-  background: #404040;
-  transform: rotate(45deg); }
-.ribbon .left.corner { left: -25px; }
-.ribbon .right.corner { right: -25px; }
 </style>
