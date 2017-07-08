@@ -35,7 +35,7 @@ export default {
   display: flex;
   align-items: center; }
 .container {
-  margin: 0 auto; }
+  margin: 2rem auto; }
 .content, .content h1 {
   color: #ffffff; }
 .content p {

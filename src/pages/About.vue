@@ -21,7 +21,7 @@
     <section class="animated fadeIn credits section">
       <h1 class="title has-text-centered"><icon name="star"></icon> Credit Where Credit Is Due</h1>
       <div class="container">
-        <p>An enormous thank you to these communities that provided help and support.</p>
+        <p class="has-text-centered">An enormous thank you to these communities that provided help and support.</p>
         <div class="credits-container">
           <div v-for="credit in credits" class="credit">
             <figure class="image is-96x96">
@@ -57,7 +57,7 @@ import $ from 'jquery'
 import Navigation from '@/components/Navigation'
 import Card from '@/components/Card'
 import Fa from '@/components/FaIcon'
-import icon from '@/components/Icon'
+import Icon from '@/components/Icon'
 import Stat from '@/components/Stat'
 import Loader from '@/components/Loader'
 
@@ -70,7 +70,7 @@ export default {
       donors: []
     }
   },
-  components: { Navigation, Card, Fa, icon, Stat, Loader },
+  components: { Navigation, Card, Fa, Icon, Stat, Loader },
   // beforeMount () {
   //   let bus = this.$root.eventBus
   //   bus.$emit('nav-show')

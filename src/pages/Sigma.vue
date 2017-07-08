@@ -44,6 +44,7 @@ import $ from 'jquery'
 import Navigation from '@/components/Navigation'
 import Card from '@/components/Card'
 import Fa from '@/components/FaIcon'
+import Icon from '@/components/Icon'
 import Stat from '@/components/Stat'
 import Loader from '@/components/Loader'
 
@@ -58,7 +59,7 @@ export default {
       stats: []
     }
   },
-  components: { Navigation, Card, Fa, Stat, Loader },
+  components: { Navigation, Card, Fa, Icon, Stat, Loader },
   beforeMount () {
     let bus = this.$root.eventBus
     bus.$emit('nav-show')
@@ -74,11 +75,11 @@ export default {
     $.get(`${api}/stats`, (data) => {
       $('#loader').hide()
       data = data.data.stats
-      this.stats.push({label: 'Active servers', value: data.general.population.guilds, icon: 'fa-server'})
-      this.stats.push({label: 'Active users', value: data.general.population.members, icon: 'fa-user'})
-      this.stats.push({label: 'Commands used', value: data.general.cmd_count, icon: 'fa-terminal'})
-      this.stats.push({label: 'Messages processed', value: data.events.message, icon: 'fa-comments'})
-      this.stats.push({label: 'Songs Played', value: data.special.songs_played, icon: 'fa-music'})
+      this.stats.push({label: 'Active servers', value: data.general.population.guilds, icon: 'server'})
+      this.stats.push({label: 'Active users', value: data.general.population.members, icon: 'users'})
+      this.stats.push({label: 'Commands used', value: data.general.cmd_count, icon: 'terminal'})
+      this.stats.push({label: 'Messages processed', value: data.events.message, icon: 'message-square'})
+      this.stats.push({label: 'Songs Played', value: data.special.songs_played, icon: 'play'})
     })
   }
 }

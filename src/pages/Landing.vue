@@ -5,12 +5,12 @@
         <div class="column animated fadeIn">
           <div class="has-text-centered">
             <img class="logo animated fadeIn" src="./../assets/logo_ap.png">
-            <h1 class="title">Welcome, to the Aurora Project</h1>
+            <h1 class="title">Welcome to the Aurora Project</h1>
             <h2 class="subtitle">
               We specialize in both
-              <fa icon='fa-paint-brush'></fa> style
+              <icon name='feather'></icon> style
               and
-              <fa icon='fa-lock'/></fa> security
+              <icon name='shield'></icon> security.
             </h2>
           </div>
         </div>
@@ -33,9 +33,10 @@
 <script>
 import Tile from '@/components/Tile'
 import Fa from '@/components/FaIcon'
+import Icon from '@/components/Icon'
 export default {
   name: 'Landing',
-  components: { Tile, Fa },
+  components: { Tile, Fa, Icon },
   data () {
     return {
       projects: this.$root.pages.landing.projects,
