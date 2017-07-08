@@ -36,6 +36,7 @@
     <section class="animated fadeIn donors section">
       <h1 class="title has-text-centered"><icon name="heart"></icon> Donors</h1>
       <div class="container">
+        <loader id="loader" inline style="margin: 1rem 0"></loader>
         <div v-for="donor in donors" class="credit">
           <figure class="image is-96x96"><img :src=donor.avatar></figure>
           <div class="ribbon tier" :class="'tier-' + donor.tier">
@@ -81,6 +82,7 @@ export default {
   mounted () {
     let api = this.$root.api
     $.get(`${api}/donors`, (data) => {
+      $('#loader').hide()
       this.donors = data.donors
     })
   }
