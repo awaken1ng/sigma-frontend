@@ -10,7 +10,8 @@
           </div>
           <div class="column">
             <a class="icon" href="https://github.com/aurora-pro"><icon name="gh"></icon> Github</a>
-            <span class="separator">|</span><a class="icon" href="https://discordapp.com/invite/Ze9EfTd"><icon name="discord"></icon> Discord</a>
+            <span class="separator">|</span>
+            <a class="icon" href="https://discordapp.com/invite/Ze9EfTd"><icon name="discord"></icon> Discord</a>
           </div>
         </div>
       </div>
@@ -20,10 +21,10 @@
 
 <script>
 // TODO move hardcoded data into config
-import icon from '@/components/Icon'
+import Icon from '@/components/Icon'
 export default {
   name: 'Footer',
-  components: { icon }
+  components: { Icon }
 }
 </script>
 

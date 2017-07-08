@@ -33,7 +33,7 @@ import $ from 'jquery'
 import './../../node_modules/semantic-ui-css/components/accordion.js'
 import Navigation from '@/components/Navigation'
 import Fa from '@/components/FaIcon'
-import icon from '@/components/Icon'
+import Icon from '@/components/Icon'
 import Loader from '@/components/Loader'
 export default {
   name: 'Sigma-commands',
@@ -43,7 +43,7 @@ export default {
       commands: []
     }
   },
-  components: { Navigation, Fa, icon, Loader },
+  components: { Navigation, Fa, Icon, Loader },
   beforeMount () {
     // let bus = this.$root.bus
     // bus.$emit('backdrop-switch', 'light')

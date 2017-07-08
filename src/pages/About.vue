@@ -57,7 +57,7 @@ import $ from 'jquery'
 import Navigation from '@/components/Navigation'
 import Card from '@/components/Card'
 import Fa from '@/components/FaIcon'
-import icon from '@/components/Icon'
+import Icon from '@/components/Icon'
 import Stat from '@/components/Stat'
 import Loader from '@/components/Loader'
 
@@ -70,7 +70,7 @@ export default {
       donors: []
     }
   },
-  components: { Navigation, Card, Fa, icon, Stat, Loader },
+  components: { Navigation, Card, Fa, Icon, Stat, Loader },
   // beforeMount () {
   //   let bus = this.$root.eventBus
   //   bus.$emit('nav-show')

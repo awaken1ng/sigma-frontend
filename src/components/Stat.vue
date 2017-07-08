@@ -1,7 +1,7 @@
 <template>
   <div class="ui statistic">
     <div class="value">
-      <span>{{ value }}</span> <fa v-if=icon :icon=icon></fa>
+      <span>{{ value }}</span> <icon v-if=icon :name=icon></icon>
     </div>
     <div class="label">
       {{ label }}
@@ -11,9 +11,10 @@
 
 <script>
   import Fa from '@/components/FaIcon'
+  import Icon from '@/components/Icon'
   export default {
     name: 'stat',
     props: ['label', 'value', 'icon'],
-    components: { Fa }
+    components: { Fa, Icon }
   }
 </script>
