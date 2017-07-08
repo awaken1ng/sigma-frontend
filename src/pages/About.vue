@@ -21,7 +21,7 @@
     <section class="animated fadeIn credits section">
       <h1 class="title has-text-centered"><icon name="star"></icon> Credit Where Credit Is Due</h1>
       <div class="container">
-        <p>An enormous thank you to these communities that provided help and support.</p>
+        <p class="has-text-centered">An enormous thank you to these communities that provided help and support.</p>
         <div class="credits-container">
           <div v-for="credit in credits" class="credit">
             <figure class="image is-96x96">
