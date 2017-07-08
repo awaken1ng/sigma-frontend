@@ -28,7 +28,7 @@
     <section class="animated fadeIn stats section has-text-centered">
       <h1 class="animated fadeIn title"><fa icon="fa-table" size=30></fa> Stats</h1>
       <div class="container">
-        <loader id="loader" inline="true"></loader>
+        <loader id="loader" inline></loader>
         <div class="columns">
           <div class="column">
             <stat v-for="stat in stats" class="animated fadeIn" :key=stat.label :label=stat.label :value=stat.value :icon=stat.icon></stat>

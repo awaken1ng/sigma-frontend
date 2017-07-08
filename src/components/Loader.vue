@@ -1,11 +1,11 @@
 <template>
-  <div :id=id class="ui segment" v-if="inline !== 'true'">
+  <div v-if="inline == undefined" :id=id class="ui segment">
     <div class="ui active dimmer">
       <div class="ui loader"></div>
     </div>
   </div>
 
-  <div :id=id class="ui active centered inline loader" v-else></div>
+  <div v-else :id=id class="ui active centered inline loader"></div>
 </template>
 
 <script>

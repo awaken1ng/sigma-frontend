@@ -13,7 +13,7 @@ var config = {
     { path: '/', meta: { title: 'Aurora Project' }, name: 'ap-landing', component: Landing },
     { path: '/sigma', meta: { title: 'Sigma: The Database' }, name: 'sigma', component: Sigma },
     { path: '/sigma/commands', meta: { title: 'Sigma: The Database - Commands' }, name: 'sigma-commands', component: Commands },
-    { path: '/sigma/about', meta: { title: 'Sigma: The Database - About' }, name: 'sigma-about', component: About },
+    { path: '/sigma/about', meta: { title: 'Sigma: The Database - About' }, name: 'sigma-about', component: About }
   ],
   navigation: {
     left: [
