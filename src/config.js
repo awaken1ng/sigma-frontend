@@ -1,20 +1,21 @@
-import embedImages from './embedImages'
+import embedImages from '@/assets/embedImages'
 import Landing from '@/pages/Landing'
 import Sigma from '@/pages/Sigma'
 import Commands from '@/pages/Commands'
 import About from '@/pages/About'
 import NotFound from '@/pages/NotFound'
 
+var api = 'https://data.auroraproject.xyz/data'
+var routing = [
+  { path: '*', meta: { title: 'Aurora Project - Not found' }, name: 'ap-notfound', component: NotFound },
+  { path: '/', meta: { title: 'Aurora Project' }, name: 'ap-landing', component: Landing },
+  { path: '/sigma', meta: { title: 'Sigma: The Database' }, name: 'sigma', component: Sigma },
+  { path: '/sigma/commands', meta: { title: 'Sigma: The Database - Commands' }, name: 'sigma-commands', component: Commands },
+  { path: '/sigma/about', meta: { title: 'Sigma: The Database - About' }, name: 'sigma-about', component: About }
+]
 var config = {
-  api: 'https://data.auroraproject.xyz/data',
+  api: api,
   store: null,
-  routes: [
-    { path: '*', meta: { title: 'Aurora Project - Not found' }, name: 'ap-notfound', component: NotFound },
-    { path: '/', meta: { title: 'Aurora Project' }, name: 'ap-landing', component: Landing },
-    { path: '/sigma', meta: { title: 'Sigma: The Database' }, name: 'sigma', component: Sigma },
-    { path: '/sigma/commands', meta: { title: 'Sigma: The Database - Commands' }, name: 'sigma-commands', component: Commands },
-    { path: '/sigma/about', meta: { title: 'Sigma: The Database - About' }, name: 'sigma-about', component: About }
-  ],
   navigation: {
     left: [
     { id: 'ap-landing', href: '/', text: 'Home' },
@@ -26,8 +27,8 @@ var config = {
     { id: 'sigma-commands', href: '/sigma/commands', text: 'Commands' },
     { id: 'sigma-about', href: '/sigma/about', text: 'About' },
     // { id: '404', href: '/sigma/404', text: '404' },
-    { id: '', href: 'https://github.com/aurora-pro/apex-sigma', text: 'Github' },
-    { id: '', href: 'https://discordapp.com/invite/Ze9EfTd', text: 'Discord' }
+    { id: '', href: 'https://github.com/aurora-pro/apex-sigma', text: 'Github', icon: 'gh' },
+    { id: '', href: 'https://discordapp.com/invite/Ze9EfTd', text: 'Discord', icon: 'discord' }
     ]
   },
   pages: {
@@ -67,4 +68,4 @@ var config = {
   }
 }
 
-export default config
+export { api, routing, config }

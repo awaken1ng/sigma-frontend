@@ -33,22 +33,51 @@ export default {
   name: 'Navigation',
   methods: {
     toggle: (event) => {
-      event.target.classList.toggle('is-active')
-      document.querySelector('.nav-menu').classList.toggle('is-active')
+      let toggle = event.target
+      let menu = document.querySelector('.nav-menu')
+
+      toggle.classList.toggle('is-active')
+      menu.classList.toggle('is-active')
+
+      // Prevent stranded active classes
+      if ((toggle.classList.contains('is-active')) && (!menu.classList.contains('is-active'))) {
+        toggle.classList.remove('is-active')
+      }
+      if ((!toggle.classList.contains('is-active')) && (menu.classList.contains('is-active'))) {
+        menu.classList.remove('is-active')
+      }
+
+      if ((toggle.classList.contains('is-active')) && (menu.classList.contains('is-active'))) {
+        // Creating backdrop on menu open
+        let backdrop = document.createElement('div')
+        backdrop.setAttribute('id', 'navigation-backdrop')
+        backdrop.setAttribute('style', 'position: fixed; width: 100%; height: 100%; z-index: 1; background: rgba(0,0,0,0.5);')
+        backdrop.addEventListener('click', () => {
+          // Close the menu and remove the backdrop
+          toggle.classList.remove('is-active')
+          menu.classList.remove('is-active')
+          backdrop.remove()
+        })
+        document.getElementById('app').appendChild(backdrop)
+      } else {
+        // Removing backdrop on menu close
+        let backdrop = document.getElementById('navigation-backdrop')
+        if (backdrop) backdrop.remove()
+      }
     }
   },
   data () {
     return {
       active: true,
-      navmenu: this.$root.eventBus.config
+      navmenu: this.$root.navigation
     }
   },
-  beforeCreate () {
-    let navigation = this
+  mounted () {
     let bus = this.$root.eventBus
     bus.$on('nav-hide', () => { this.active = false })
     bus.$on('nav-show', () => { this.active = true })
-    navigation.navmenu = navigation.$root.eventBus.config.common
+    // Make sure the navigation is hidden on first load
+    if (this.$route.name === 'ap-landing') this.active = false
   }
 }
 </script>

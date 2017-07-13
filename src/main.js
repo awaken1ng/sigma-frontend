@@ -9,19 +9,14 @@ import App from './App'
 import router from './router'
 Vue.config.productionTip = false
 /* eslint-disable no-new */
-import Config from './config'
-// Config.bus = new Vue({ data: {config: Config.navigation} })
-let eventBus = new Vue({
-  data: {
-    config: Config.navigation
-  }
-})
-Config.eventBus = eventBus
-// import store from './storage'
+import { config } from '@/config'
+import eventBus from '@/eventBus'
+config.eventBus = eventBus
+
 new Vue({
   el: '#app',
   router,
   template: '<App/>',
   components: { App },
-  data: Config
+  data: config
 })
