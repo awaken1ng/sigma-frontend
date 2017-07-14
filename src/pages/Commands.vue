@@ -39,15 +39,11 @@ export default {
   name: 'Sigma-commands',
   data () {
     return {
-      initialized: false,
       commands: []
     }
   },
   components: { Navigation, Fa, Icon, Loader },
   beforeMount () {
-    // let bus = this.$root.bus
-    // bus.$emit('backdrop-switch', 'light')
-    // bus.$emit('nav-show')
     this.$root.navigation.conditional = [
       {
         text: 'Open all',
@@ -69,7 +65,6 @@ export default {
           $('.sigma-cmd-open').show()
         }
       }
-      // ]
     ]
     let api = this.$root.api
     $.get(`${api}/commands`, (data) => {
@@ -86,7 +81,8 @@ export default {
     this.$root.navigation.conditional = null
   },
   updated () {
-    if (!this.initialized) {
+    let accordion = document.getElementsByClassName('accordion').length
+    if (accordion) {
       $('.ui.accordion').accordion({
         // animateChildren: true,
         // duration: 500,
@@ -113,10 +109,8 @@ export default {
           }
         }
       })
-      this.initialized = true
     }
   }
-
 }
 </script>
 
@@ -152,7 +146,6 @@ p.usage { margin-bottom: 0.75rem; }
 .owner strong { color: #DB0000; }
 .owner span { color: #636c72; }
 .owner span strong { color: #636c72; }
-
 .header { color: #1B6F5F !important; }
 .ui.accordion .content { padding: 1rem; }
 .ui.accordion .title:not(.ui) {

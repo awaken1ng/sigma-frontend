@@ -42,16 +42,6 @@ export default {
       projects: this.$root.pages.landing.projects,
       other: this.$root.pages.landing.others
     }
-  },
-  beforeMount () {
-    // console.log(this.$store)
-    // let store = this.$root.store
-    // store.commit('show')
-    // store.commit('hide')
-    let bus = this.$root.eventBus
-    // bus.$emit('backdrop-switch', 'dark')
-    bus.$emit('backdrop-dark')
-    bus.$emit('nav-hide')
   }
 }
 </script>
