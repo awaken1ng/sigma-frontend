@@ -9,9 +9,9 @@
             </p>
           </div>
           <div class="column">
-            <a class="icon" href="https://github.com/aurora-pro"><icon name="gh"></icon> Github</a>
-            <span class="separator">|</span>
-            <a class="icon" href="https://discordapp.com/invite/Ze9EfTd"><icon name="discord"></icon> Discord</a>
+            <span v-for="link in links" v-if="link.icon != undefined">
+              <a class="icon"><icon :name=link.icon></icon> {{ link.text }}</a><span class="separator">|</span>
+            </span>
           </div>
         </div>
       </div>
@@ -20,10 +20,14 @@
 </template>
 
 <script>
-// TODO move hardcoded data into config
 import Icon from '@/components/Icon'
 export default {
   name: 'Footer',
+  data () {
+    return {
+      links: this.$root.navigation.right
+    }
+  },
   components: { Icon }
 }
 </script>
@@ -43,4 +47,6 @@ div.content > p:not(:last-child) { padding: 1rem; }
 .tomatoes { color: #b03232; }
 
 .container .column .icon { margin: 0 1rem; }
+.container .column span:last-child .separator { display: none; }
+
 </style>
