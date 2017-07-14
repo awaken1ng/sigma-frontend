@@ -11,12 +11,12 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 import Config from './config'
 // Config.bus = new Vue({ data: {config: Config.navigation} })
-let eventBus = new Vue({
+let eventbus = new Vue({
   data: {
     config: Config.navigation
   }
 })
-Config.eventBus = eventBus
+Config.eventbus = eventbus
 // import store from './storage'
 new Vue({
   el: '#app',
