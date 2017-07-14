@@ -10,7 +10,7 @@
           </div>
           <div class="column">
             <span v-for="link in links" v-if="link.icon != undefined">
-              <a class="icon"><icon :name=link.icon></icon> {{ link.text }}</a><span class="separator">|</span>
+              <a class="icon" :href=link.href><icon :name=link.icon></icon> {{ link.text }}</a><span class="separator">|</span>
             </span>
           </div>
         </div>
