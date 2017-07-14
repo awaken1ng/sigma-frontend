@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import { routing } from '@/config'
-import bus from '@/eventBus'
+import bus from '@/eventbus'
 
 Vue.use(Router)
 var router = new Router({
