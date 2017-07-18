@@ -8,7 +8,7 @@
         <div class="content commands">
           <div class="command" v-for="command in category.commands">
             <h1>{{ command.names.primary }}</h1>
-            <p>{{ command.desc }}</p>
+            <p v-if=command.desc class="description">{{ command.desc }}</p>
             <p class="usage">Example: <span>{{ command.usage }}</span></p>
             <p class="aliases" v-if=command.names.alts>
               Alternative names: <strong>{{ command.names.alts.join(', ') }}</strong>
