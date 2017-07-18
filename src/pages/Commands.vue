@@ -134,6 +134,7 @@ export default {
 .command h1 { font-size: 1.5rem; }
 .command h1, .aliases strong { color: #1B6F5F !important; }
 .command h1, .command p { margin-bottom: 0.5rem; }
+p.description { white-space: pre-wrap; }
 p.usage { margin-bottom: 0.75rem; }
 .usage span {
   padding: .2rem .4rem;
