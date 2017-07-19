@@ -10,7 +10,7 @@ import router from './router'
 Vue.config.productionTip = false
 /* eslint-disable no-new */
 import { config } from '@/config'
-import eventBus from '@/eventBus'
+import eventBus from '@/eventbus'
 config.eventBus = eventBus
 
 new Vue({
