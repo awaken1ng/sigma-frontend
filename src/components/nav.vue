@@ -22,7 +22,7 @@
     <div class="nav-right nav-menu">
       <span v-for="link in navmenu.right">
         <router-link v-if=link.id class="nav-item hoverline" :key=link.id :to=link.href>{{ link.text }}</router-link>
-        <a v-else class="nav-item hoverline" :href=link.href>{{ link.text }}</a>
+        <a v-else class="nav-item hoverline" target="_blank" :href=link.href>{{ link.text }}</a>
       </span>
     </div>
   </nav>
