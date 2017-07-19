@@ -105,4 +105,5 @@ a.button:hover {
 .ui {
   font-size: 14px;
   line-height: 20px; }
+.ui .loader { border: unset; } /* Fix the Semantic's loader */
 </style>
