@@ -44,7 +44,7 @@ var config = {
       },
       about: {
         makers: [
-          { name: 'Alex', hype: 'lsCPcvjHNr', about: 'The lead developer and original creator of Sigma. The resident asshat of the group, pretty fun though.', avatar: 'http://i.imgur.com/P4G0fqE.gif', overlay: 'python' },
+          { name: 'Alex', hype: 'lsCPcvjHNr', about: 'The lead developer and original creator of Sigma. The resident asshat of the group, pretty fun though.', avatar: 'https://i.imgur.com/P4G0fqE.gif', overlay: 'python' },
           { name: 'Awakening', about: 'A crazy Russian hacker. Talks the least, seriously silent like a shadow but has the biggest personality!', avatar: 'https://www.gravatar.com/avatar/77467fb9f03e2c5ebdccbc8a548a1147.png?s=128', overlay: 'js' },
           { name: 'Valeth', about: "Just popped up out of nowhere and started changing all the code! I haven't regretted it yet. He likes dry stuff.", avatar: 'https://www.gravatar.com/avatar/17d3a152085c9a4d08254acc7ee5d06e.png?s=128', overlay: 'ruby' }
         ],
