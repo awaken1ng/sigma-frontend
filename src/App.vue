@@ -48,7 +48,7 @@ export default {
 
 <style>
 html { overflow-y: initial !important; } /* Reset vertical overflow */
-body, button, input, select, textarea, .ui {
+body, button, input, select, textarea, .ui, [class*="tooltip--"]::after {
   font-family: 'Exo 2',
                BlinkMacSystemFont,
                -apple-system,
@@ -63,7 +63,8 @@ body, button, input, select, textarea, .ui {
                "Helvetica",
                "Arial",
                'Meiryo', /* Japanese font for proper Japanese rendering */
-               sans-serif; }
+               sans-serif
+               !important; }
 #app {
   display: flex;
   flex-direction: column;
