@@ -86,8 +86,15 @@ export default {
 .nav {
   position: fixed;
   width: 100%;
-  padding: 5px;
-}
+  padding: 5px; }
+.nav::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: -2px;
+  padding-bottom: 2px;
+  background-image: linear-gradient(160deg,#18AA8D 0% ,#17947B 100%); }
 .nav-left, .nav-right { overflow: hidden; }  /* Hide scrollbars that appear due to wrapping navigation items into spans */
 .nav-toggle { height: auto; }
 .nav a.nav-item { outline: none; }
