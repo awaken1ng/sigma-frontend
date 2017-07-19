@@ -24,5 +24,12 @@ router.afterEach((to, from) => {
     bus.$emit('nav-show')
   }
   document.title = to.meta.title
+  // Reseting the navigation menu
+  let toggle = document.querySelector('.nav-toggle')
+  let menu = document.querySelector('.nav-menu')
+  let navigationBackdrop = document.getElementById('navigation-backdrop')
+  if (navigationBackdrop) navigationBackdrop.remove()
+  if (toggle) { if (toggle.classList.contains('is-active')) toggle.classList.remove('is-active') }
+  if (menu) { if (menu.classList.contains('is-active')) menu.classList.remove('is-active') }
 })
 export default router
