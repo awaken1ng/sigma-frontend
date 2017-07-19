@@ -108,20 +108,33 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   overflow: hidden; }
 
-.hoverline.router-link-exact-active.router-link-active:before { right: 0; }  /* highlight the currently open page */
-.hoverline:before {
+/* highlight the currently open page */
+.hoverline.router-link-exact-active.router-link-active:before { right: 0; }
+.hoverline.router-link-exact-active.router-link-active:after { left: 0; }
+
+.hoverline:before, .hoverline:after {
   content: "";
   position: absolute;
   z-index: -1;
-  left: 0;
-  right: 100%;
   bottom: 0;
-  background: #1B6F5F;
-  height: 2px;
+  background: linear-gradient(160deg,#18AA8D 0% ,#17947B 100%);
+  height: 2px; }
+.hoverline:before {
+  left: 50%;
+  right: 100%;
   transition: right .3s ease-out; }
+.hoverline:after {
+  left: 100%;
+  right: 50%;
+  bottom: 0;
+  transition: left .3s ease-out; }
 
 .hoverline:hover:before,
 .hoverline:focus:before,
 .hoverline:active:before {
   right: 0; }
+.hoverline:hover:after,
+.hoverline:focus:after,
+.hoverline:active:after {
+  left: 0; }
 </style>
