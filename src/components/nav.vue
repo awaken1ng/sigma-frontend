@@ -22,7 +22,7 @@
     <div class="nav-right nav-menu">
       <span v-for="link in navmenu.right">
         <router-link v-if=link.id class="nav-item hoverline" :key=link.id :to=link.href>{{ link.text }}</router-link>
-        <a v-else class="nav-item hoverline" :href=link.href>{{ link.text }}</a>
+        <a v-else class="nav-item hoverline" target="_blank" :href=link.href>{{ link.text }}</a>
       </span>
     </div>
   </nav>
@@ -86,8 +86,15 @@ export default {
 .nav {
   position: fixed;
   width: 100%;
-  padding: 5px;
-}
+  padding: 5px; }
+.nav::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: -2px;
+  padding-bottom: 2px;
+  background-image: linear-gradient(160deg,#18AA8D 0% ,#17947B 100%); }
 .nav-left, .nav-right { overflow: hidden; }  /* Hide scrollbars that appear due to wrapping navigation items into spans */
 .nav-toggle { height: auto; }
 .nav a.nav-item { outline: none; }
@@ -101,20 +108,33 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   overflow: hidden; }
 
-.hoverline.router-link-exact-active.router-link-active:before { right: 0; }  /* highlight the currently open page */
-.hoverline:before {
+/* highlight the currently open page */
+.hoverline.router-link-exact-active.router-link-active:before { right: 0; }
+.hoverline.router-link-exact-active.router-link-active:after { left: 0; }
+
+.hoverline:before, .hoverline:after {
   content: "";
   position: absolute;
   z-index: -1;
-  left: 0;
-  right: 100%;
   bottom: 0;
-  background: #1B6F5F;
-  height: 2px;
+  background: linear-gradient(160deg,#18AA8D 0% ,#17947B 100%);
+  height: 2px; }
+.hoverline:before {
+  left: 50%;
+  right: 100%;
   transition: right .3s ease-out; }
+.hoverline:after {
+  left: 100%;
+  right: 50%;
+  bottom: 0;
+  transition: left .3s ease-out; }
 
 .hoverline:hover:before,
 .hoverline:focus:before,
 .hoverline:active:before {
   right: 0; }
+.hoverline:hover:after,
+.hoverline:focus:after,
+.hoverline:active:after {
+  left: 0; }
 </style>

@@ -12,7 +12,14 @@
       <div class="container">
         <div class="columns">
           <div class="column" v-for="maker in makers">
-            <card class="animated fadeIn" :key=maker.name :avatar=maker.avatar :overlay=maker.overlay :name=maker.name :content=maker.about></card>
+            <card
+              class="animated fadeIn"
+              :key=maker.name
+              :avatar=maker.avatar
+              :overlay=maker.overlay
+              :hype=maker.hype
+              :name=maker.name
+              :content=maker.about></card>
           </div>
         </div>
       </div>

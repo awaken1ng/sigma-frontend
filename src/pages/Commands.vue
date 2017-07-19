@@ -8,7 +8,7 @@
         <div class="content commands">
           <div class="command" v-for="command in category.commands">
             <h1>{{ command.names.primary }}</h1>
-            <p>{{ command.desc }}</p>
+            <p v-if=command.desc class="description">{{ command.desc }}</p>
             <p class="usage">Example: <span>{{ command.usage }}</span></p>
             <p class="aliases" v-if=command.names.alts>
               Alternative names: <strong>{{ command.names.alts.join(', ') }}</strong>
@@ -134,6 +134,7 @@ export default {
 .command h1 { font-size: 1.5rem; }
 .command h1, .aliases strong { color: #1B6F5F !important; }
 .command h1, .command p { margin-bottom: 0.5rem; }
+p.description { white-space: pre-wrap; }
 p.usage { margin-bottom: 0.75rem; }
 .usage span {
   padding: .2rem .4rem;

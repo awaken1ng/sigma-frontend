@@ -14,20 +14,9 @@
       </div>
     </section>
 
-    <!-- <section class="section makers animated fadeIn">
-      <h1 class="animated fadeIn title has-text-centered"><fa icon="fa-coffee" size=30></fa> The Makers</h1>
+    <section class="stats section has-text-centered">
       <div class="container">
-        <div class="columns">
-          <div class="column" v-for="maker in makers">
-            <card class="animated fadeIn" :key=maker.name :avatar=maker.avatar :overlay=maker.overlay :name=maker.name :content=maker.about></card>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
-    <section class="animated fadeIn stats section has-text-centered">
-      <h1 class="animated fadeIn title"><fa icon="fa-table" size=30></fa> Stats</h1>
-      <div class="container">
+        <h1 class="title"><icon name="bar-chart-2"></icon> Stats</h1>
         <loader id="loader" inline></loader>
         <div class="columns">
           <div class="column">
@@ -85,18 +74,21 @@ export default {
 .hero-body {
   margin: auto;
   padding-top: 4rem;
-  padding-bottom: 2rem;
-}
-.hero .logo { max-height: 250px; }
-.hero .title, .hero .subtitle { color: #fff; }
-.tag.is-white { color: #1B6F5F; }
-.version { margin-top: 1em; min-height: 1.68em; }
+  padding-bottom: 2rem; }
+.hero .logo {
+  max-height: 250px; }
+.hero .title, .hero .subtitle {
+  color: #fff; }
+.tag.is-white {
+   color: #1B6F5F; }
+.version {
+  margin-top: 1em; min-height: 1.68em; }
 .version span {
   border-radius: 2px;
   margin: 0 5px; }
-.stats .container { min-height: 9rem; }
-#loader { margin: 3rem auto; }
+.stats .container {
+  min-height: 9rem; }
+#loader {
+  margin: 2rem auto; }
 @media screen and (max-width: 911px), print {
-  .columns:not(.is-desktop) { display: block; }
-   .card { max-width: 500px; } }
 </style>

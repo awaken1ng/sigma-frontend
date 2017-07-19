@@ -48,5 +48,4 @@ div.content > p:not(:last-child) { padding: 1rem; }
 
 .container .column .icon { margin: 0 1rem; }
 .container .column span:last-child .separator { display: none; }
-
 </style>
